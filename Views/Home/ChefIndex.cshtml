@@ -1,0 +1,32 @@
+@using ChefsNDishes.Models
+@model List<Chef>
+<head>
+<link rel="stylesheet" type="text/css" href="DishStyle.css">
+</head>
+<div class="header">
+<a href="/"><h1><b>Dishes</b></h1></a> <h1>|</h1>
+<a href="/chef"><h1><b>Chefs</b></h1></a>
+<a href="/chef/new">Add a Chef</a>
+<h5>Check out our tasty dishes!</h5>
+</div><br>
+    <table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Age</th>
+            <th scope="col"># of Dishes</th>
+        </tr>
+        </thead>
+        @foreach(var Chef in Model)
+        {
+        <tbody>
+        <tr>
+            <th scope="row">@Chef.ChefFirstName @Chef.ChefLastName</th>
+            <td>@Chef.Age</td>
+            <td>@Chef.CreatedDishes.Count</td>
+            <td></td>
+        </tr>
+        </tbody>
+        }
+    </table>
+

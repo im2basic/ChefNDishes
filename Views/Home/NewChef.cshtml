@@ -1,0 +1,19 @@
+@model ChefsNDishes.Models.Chef
+<div class="Header">
+    <h1>Add a new Chef!</h1>
+    <a href="/chef">Home</a>
+</div>
+<div class="Form">
+    <form asp-action="CreateChef" asp-controller="Home" method="post">
+        <span style="color: red;" asp-validation-for="ChefFirstName"></span>
+        <label asp-for="ChefFirstName"></label>
+        <input asp-for="ChefFirstName"><br>
+        <span style="color: red;" asp-validation-for="ChefLastName"></span>
+        <label asp-for="ChefLastName"></label>
+        <input asp-for="ChefLastName"><br>
+        <span style="color: red;" asp-validation-for="Age"></span>
+        <label asp-for="Age"></label>
+        <input asp-for="Age"><br>
+        <input type="submit" value="Add Chef">
+    </form>
+</div>
